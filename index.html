@@ -1,174 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namaa Biotech</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f8f7;
-            color: #173b35;
-        }
-
-        header {
-            background: #ffffff;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #173b35;
-            font-weight: bold;
-        }
-
-        .hero {
-            padding: 90px 8%;
-            text-align: center;
-            background: #e4f1ed;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 30px;
-            background: #1f6f61;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .courses {
-            padding: 60px 8%;
-            text-align: center;
-        }
-
-        .courses h2 {
-            font-size: 32px;
-            margin-bottom: 35px;
-        }
-
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: white;
-            width: 280px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            line-height: 1.5;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #173b35;
-            color: white;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namaa Biotech | Lab Reality 101</title>
+<style>
+:root{--teal:#116b7d;--blue:#164c67;--green:#6bb83f;--ink:#17323b;--soft:#f4f8f7;--white:#fff;--muted:#687b82;--line:#dce8e5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:auto;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue);letter-spacing:.5px}.brand img{height:46px;width:auto;object-fit:contain;border-radius:8px}
+.links{display:flex;gap:26px;font-weight:600;font-size:14px}.links a:hover{color:var(--green)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer}.primary{background:var(--teal);color:white}.secondary{background:#edf6f3;color:var(--teal)}
+.hero{background:linear-gradient(135deg,#f5fbf8 0%,#eef7f8 55%,#fff 100%);padding:80px 22px 70px}.hero-in{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.kicker{color:var(--green);font-weight:900;letter-spacing:2px;font-size:13px}.hero h1{font-size:clamp(44px,6vw,72px);line-height:.98;margin:13px 0;color:var(--blue)}.hero h1 span{color:var(--green)}.hero p{font-size:18px;line-height:1.7;color:#52676e;max-width:650px}.hero-card{background:white;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 18px 50px rgba(20,70,80,.10)}.hero-card img{width:100%;max-height:180px;object-fit:contain;border-radius:18px;display:block}.price{font-size:30px;font-weight:900;color:var(--blue)}
+section{padding:78px 22px}.wrap{max-width:1180px;margin:auto}.title{text-align:center;max-width:760px;margin:0 auto 42px}.title h2{font-size:38px;margin:0 0 10px;color:var(--blue)}.title p{color:var(--muted);line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 8px 28px rgba(30,70,80,.05)}.card h3{margin:10px 0;color:var(--blue)}.card p,.card li{color:var(--muted);line-height:1.65}.num{width:45px;height:45px;border-radius:13px;background:#eaf6ed;color:var(--green);display:grid;place-items:center;font-weight:900}
+.course{background:var(--soft)}.module{display:flex;gap:18px;align-items:flex-start}.module+.module{margin-top:18px}.module .body{flex:1}.module ul{margin-bottom:0}
+.cta{background:linear-gradient(135deg,var(--blue),var(--teal));color:white}.cta .title h2,.cta .title p{color:white}
+footer{background:#102f38;color:#dcebed;padding:35px 22px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}.foot small{color:#a9c0c5}
+.modal{display:none;position:fixed;inset:0;background:rgba(5,25,30,.58);z-index:50;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:#fff;border-radius:22px;max-width:620px;width:100%;padding:28px;max-height:90vh;overflow:auto}.close{float:right;border:0;background:#eef5f3;border-radius:10px;padding:8px 12px;cursor:pointer}.tabs{display:flex;gap:8px;margin:18px 0}.tab{padding:9px 13px;border-radius:10px;background:#edf6f3;border:0;font-weight:700;cursor:pointer}.tab.active{background:var(--teal);color:#fff}.panel{display:none}.panel.active{display:block}input,textarea,select{width:100%;padding:12px;border:1px solid #cddeda;border-radius:10px;margin:7px 0 14px;font:inherit}label{font-weight:700;font-size:13px}
+.lesson{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px}.lesson:last-child{border:0}.pill{font-size:11px;background:#eaf6ed;color:#2f7d37;padding:5px 9px;border-radius:20px;font-weight:800}
+.notice{padding:13px 15px;border-radius:12px;background:#fff8e6;border:1px solid #f1dfac;color:#715a20;font-size:13px;line-height:1.5}
+.dashboard-box{background:#f8faf9;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:15px}
+@media(max-width:850px){.hero-in{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.links{display:none}.navin{height:68px}.hero{padding-top:50px}.foot{flex-direction:column;text-align:center}}
+</style>
 </head>
-
 <body>
+<nav class="nav"><div class="navin">
+  <a class="brand" href="#home"><span>NAMAA BIOTECH</span></a>
+  <div class="links">
+    <a href="#courses">Courses</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#" onclick="openAccount();return false">Student Login</a>
+    <a href="#" onclick="openAdminModal();return false" style="color:var(--green)">Admin Dashboard</a>
+  </div>
+  <a class="btn primary" href="#courses">Explore Course</a>
+</div></nav>
 
-    <header>
-        <div class="logo">🧬 Namaa Biotech</div>
+<header id="home" class="hero"><div class="hero-in">
+  <div>
+    <div class="kicker">BRIDGING ACADEMIA & LAB REALITY</div>
+    <h1>LAB<br><span>REALITY 101</span></h1>
+    <p>A practical biotechnology training program designed to move beyond academic theory and introduce learners to real laboratory concepts, workflows, molecular biology, bioinformatics and career readiness.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn primary" href="#courses">View Course</a><button class="btn secondary" onclick="openAccount()">Create Student Account</button></div>
+  </div>
+  <div class="hero-card">
+    <div style="padding:14px 4px 0"><div class="price">EGP 1,200</div><p style="margin:3px 0 0;font-weight:800;color:var(--teal)">3 Modules • Practical Training</p><p style="margin:7px 0 0;color:var(--muted)">Videos • Materials • Practical Training</p></div>
+  </div>
+</div></header>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Courses</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+<section id="about"><div class="wrap">
+<div class="title"><h2>About Namaa Biotech</h2><p>Namaa Biotech is an educational platform created to bridge the gap between academic biotechnology education and real laboratory and career experience.</p></div>
+<div class="grid">
+<div class="card"><div class="num">01</div><h3>Our Mission</h3><p>We aim to make biotechnology knowledge more practical, accessible and connected to the real world, helping students understand what comes after graduation.</p></div>
+<div class="card"><div class="num">02</div><h3>What We Offer</h3><p>Practical courses, laboratory concepts, training materials and career-oriented guidance designed around the realities of biotechnology.</p></div>
+<div class="card"><div class="num">03</div><h3>Our Vision</h3><p>To help biotechnology students and graduates build confidence, understand laboratory workflows and make more informed career decisions.</p></div>
+</div>
+</div></section>
 
-    <section class="hero">
-        <h1>Welcome to Namaa Biotech</h1>
+<section id="about-me" style="padding-top:20px"><div class="wrap">
+<div class="card" style="max-width:980px;margin:auto;display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:center">
+<div style="width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,#eaf6ed,#eaf4f7);display:grid;place-items:center;font-size:62px">🧬</div>
+<div>
+<div class="kicker">ABOUT ME</div>
+<h2 style="color:var(--blue);font-size:32px;margin:8px 0">Dr. Nada Mohamed</h2>
+<h3 style="margin:0 0 12px;color:var(--teal)">Biotechnologist • Science Teacher</h3>
+<p style="color:var(--muted);line-height:1.75;margin-bottom:12px">I am Nada Mohamed, a Biotechnologist and Science Teacher at an international school, as well as a Science teacher for Arabic-speaking students. Through my academic and practical experience, I have developed a strong interest in connecting biotechnology education with real laboratory practice.</p>
+<p style="color:var(--muted);line-height:1.75;margin:0">I created <strong>Namaa Biotech</strong> to share practical knowledge, raise awareness about the real experiences and opportunities available to biotechnology graduates, and help students understand how to move from university knowledge into laboratory and career reality.</p>
+</div></div>
+</div></section>
 
-        <p>
-            An educational platform designed to make biotechnology,
-            biology, and life sciences easier, clearer, and more engaging.
-        </p>
+<section id="courses" class="course"><div class="wrap"><div class="title"><h2>Featured Course</h2><p>Your first Namaa Biotech training program.</p></div>
+<div class="card" style="max-width:900px;margin:auto;padding:32px">
+<div style="display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap">
+  <div><div class="kicker">NAMAA BIOTECH • COURSE 01</div><h2 style="font-size:32px;color:var(--blue);margin:8px 0">Lab Reality 101</h2><p>From academic knowledge to real laboratory practice.</p></div>
+  <button class="btn primary" onclick="openEnroll()">Enroll Now</button>
+</div>
 
-        <a href="#" class="button">Explore Courses</a>
-    </section>
+<div style="margin-top:25px">
+<div class="module"><div class="num">01</div><div class="body"><h3>Lab Safety, Equipment & Lab Calculations</h3><ul><li>Laboratory safety and PPE</li><li>Common laboratory equipment and proper handling</li><li>Units, conversions, concentrations and dilution calculations</li></ul>
+<div id="mod1-content">
+<div class="lesson"><span>🎥 Introduction to Lab Safety Video</span><span class="pill" style="background:#fff3cd;color:#856404">LOCKED (Enroll & Pay to Unlock)</span></div>
+<div class="lesson"><span>📄 Module 1 materials</span><a href="#" onclick="accessMaterial('Module 1 Materials');return false" class="pill" style="background:#eaf6ed;color:#2f7d37">MATERIALS</a></div>
+</div>
+</div></div>
 
-    <section class="courses">
-        <h2>Our Courses</h2>
+<div class="module"><div class="num">02</div><div class="body"><h3>Sample Preparation, Diagnosis, Molecular Biology & Bioinformatics</h3><ul><li>Sample preparation and diagnostic workflow</li><li>Molecular biology concepts and techniques</li><li>Introduction to bioinformatics and lab-to-data workflow</li></ul>
+<div id="mod2-content">
+<div class="lesson"><span>🎥 Sample Preparation & PCR Video</span><span class="pill" style="background:#fff3cd;color:#856404">LOCKED (Enroll & Pay to Unlock)</span></div>
+<div class="lesson"><span>📄 Module 2 materials</span><a href="#" onclick="accessMaterial('Module 2 Materials');return false" class="pill" style="background:#eaf6ed;color:#2f7d37">MATERIALS</a></div>
+</div>
+</div></div>
 
-        <div class="cards">
+<div class="module"><div class="num">03</div><div class="body"><h3>Career & Workflow</h3><ul><li>Real laboratory workflow and documentation</li><li>Professional practice and quality awareness</li><li>Biotechnology career paths, CV and interview readiness</li></ul>
+<div id="mod3-content">
+<div class="lesson"><span>🎥 Career Guidance & CV Review Video</span><span class="pill" style="background:#fff3cd;color:#856404">LOCKED (Enroll & Pay to Unlock)</span></div>
+<div class="lesson"><span>📄 Module 3 materials</span><a href="#" onclick="accessMaterial('Module 3 Materials');return false" class="pill" style="background:#eaf6ed;color:#2f7d37">MATERIALS</a></div>
+</div>
+</div></div>
 
-            <div class="card">
-                <h3>🧬 Biotechnology</h3>
-                <p>
-                    Learn the fundamentals of biotechnology through
-                    simple explanations and educational materials.
-                </p>
-            </div>
+</div></div></div></section>
 
-            <div class="card">
-                <h3>🔬 Molecular Biology</h3>
-                <p>
-                    Understand DNA, genes, proteins, cells, and
-                    molecular processes step by step.
-                </p>
-            </div>
+<section><div class="wrap"><div class="title"><h2>How It Works</h2><p>Simple for students, and easy for you to keep updating.</p></div><div class="grid">
+<div class="card"><div class="num">1</div><h3>Create Account</h3><p>Students register and create their own learning account.</p></div>
+<div class="card"><div class="num">2</div><h3>Enroll & Pay</h3><p>Choose Lab Reality 101, pay via InstaPay or Vodafone Cash to 01092196398.</p></div>
+<div class="card"><div class="num">3</div><h3>Learn & Practice</h3><p>Once admin approves your payment, videos and materials unlock instantly!</p></div>
+</div></div></section>
 
-            <div class="card">
-                <h3>🧪 Life Sciences</h3>
-                <p>
-                    Explore biology and life science topics with
-                    interactive and student-friendly learning.
-                </p>
-            </div>
+<section id="contact" class="cta"><div class="wrap"><div class="title">
+<h2>Contact Namaa Biotech</h2><p>Questions about Lab Reality 101, enrollment or payment? We are happy to help.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a class="btn" style="background:white;color:var(--blue)" href="https://wa.me/201092196398" target="_blank">WhatsApp: 01092196398</a>
+<a class="btn secondary" href="https://wa.me/201001552782" target="_blank">WhatsApp: 01001552782</a>
+<a class="btn secondary" href="tel:01155583082">Call: 011 55583082</a>
+</div></div></div></section>
+<footer><div class="foot"><div><b>NAMAA BIOTECH</b><br><small>Bridging Academia & Lab Reality.</small></div><small>© 2026 Namaa Biotech. All rights reserved.</small></div></footer>
 
-        </div>
-    </section>
+<!-- Student Account Modal -->
+<div class="modal" id="accountModal"><div class="modalbox">
+<button class="close" onclick="closeModal('accountModal')">✕</button>
+<h2 style="color:var(--blue)">Student Account & Dashboard</h2>
+<div class="tabs"><button class="tab active" onclick="tab(this,'login')">Login</button><button class="tab" onclick="tab(this,'register')">Create Account</button><button class="tab" onclick="tab(this,'studentDash')">My Dashboard</button></div>
+<div id="login" class="panel active">
+  <label>Email</label><input type="email" id="loginEmail" placeholder="student@email.com">
+  <label>Password</label><input type="password" id="loginPass" placeholder="••••••••">
+  <button class="btn primary" style="width:100%" onclick="studentLogin()">Login to Dashboard</button>
+</div>
+<div id="register" class="panel">
+  <label>Full Name</label><input id="regName" placeholder="Your name">
+  <label>Email</label><input id="regEmail" type="email" placeholder="student@email.com">
+  <label>Password</label><input type="password" id="regPass" placeholder="••••••••">
+  <button class="btn primary" style="width:100%" onclick="studentRegister()">Create Account</button>
+</div>
+<div id="studentDash" class="panel">
+  <div class="dashboard-box">
+    <h3 style="color:var(--blue);margin-top:0">Welcome, <span id="dashNameStudent">Student</span>!</h3>
+    <p><strong>Enrolled Course:</strong> Lab Reality 101</p>
+    <p><strong>Payment Status:</strong> <span id="dashStatus" style="color:#d9534f;font-weight:bold">Not Verified / Locked</span></p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:12px 0">
+    <p style="font-size:13px;color:var(--muted)">If you have already paid via InstaPay or Vodafone Cash (01092196398), submit your reference number in "Enroll Now" to get approved by Dr. Nada.</p>
+    <button class="btn primary" style="width:100%;margin-top:10px" onclick="checkUnlockStatus()">Refresh Course Access</button>
+  </div>
+</div>
+</div></div>
 
-    <footer>
-        © 2026 Namaa Biotech — All Rights Reserved
-    </footer>
+<!-- Enroll Modal -->
+<div class="modal" id="enrollModal"><div class="modalbox">
+<button class="close" onclick="closeModal('enrollModal')">✕</button>
+<h2 style="color:var(--blue)">Enroll in Lab Reality 101</h2>
+<p><strong>Course Fee: EGP 1,200</strong></p>
+<label>Full Name</label><input id="enName" placeholder="Your full name">
+<label>Email</label><input id="enEmail" type="email" placeholder="student@email.com">
+<label>Phone / WhatsApp</label><input id="enPhone" placeholder="01...">
+<h3 style="color:var(--teal);margin-bottom:8px">Payment Info</h3>
+<div class="notice"><strong>InstaPay / Vodafone Cash Number:</strong> <span style="font-size:16px;font-weight:900">01092196398</span><br><br>Please transfer EGP 1,200 to 01092196398, then enter your transaction/reference number below. Dr. Nada will review and approve your access.</div>
+<label style="display:block;margin-top:14px">Payment Method</label>
+<select id="paymentMethod"><option>InstaPay</option><option>Vodafone Cash</option></select>
+<label>Transaction / Payment Reference Number</label><input id="paymentRef" placeholder="Enter payment reference number">
+<button class="btn primary" style="width:100%" onclick="submitEnroll()">Submit Enrollment & Payment</button>
+<p id="enMsg" style="font-weight:700;color:var(--teal);margin-top:10px"></p>
+</div></div>
 
-</body>
-</html>
+<!-- Admin Dashboard Modal -->
+<div class="modal" id="adminModal"><div class="modalbox" style="max-width:720px">
+<button class="close" onclick="closeModal('adminModal')">✕</button>
+<div style="display:flex;justify-content:space-between;align-items:center">
+  <h2 style="color:var(--blue);margin:0">Dr. Nada - Admin Dashboard</h2>
+  <span class="pill" style="background:var(--teal);color:white">ADMIN ACCESS</span>
+</div>
+<p style="color:var(--muted);font-size:13px">Manage student approvals, video links, and course modules.</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="adminTab(this,'adminStudents')">Pending Students</button>
+  <button class="tab" onclick="adminTab(this,'adminCourses')">Add / Edit Content</button>
+</div>
+
+<!-- Students Tab -->
+<div id="adminStudents" class="panel active">
+  <h3 style="color:var(--blue);font-size:16px">Student Enrollment Requests</h3>
+  <div class="dashboard-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <div>
+        <strong>Ahmed Mohamed</strong><br>
+        <small style="color:var(--muted)">ahmed@email.com • Ref: 984521 • Vodafone Cash</small>
+      </div>
+      <button class="btn primary" style="padding:8px 14px;font-size:13px" onclick="approveStudent(this)">Approve Access</button>
+    </div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:10px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>Sara Mahmoud</strong><br>
+        <small style="color:var(--muted)">sara@email.com • Ref: 112233 • InstaPay</small>
+      </div>
+      <button class="btn primary" style="padding:8px 14px;font-size:13px" onclick="approveStudent(this)">Approve Access</button>
+    </div>
+  </div>
+</div>
+
+<!-- Courses & Videos Tab -->
+<div id="adminCourses" class="panel">
+  <h3 style="color:var(--blue);font-size:16px">Add Video / Material to Modules</h3>
+  <div class="dashboard-box">
+    <label>Select Module</label>
+    <select id="admModuleSelect">
+      <option value="1">Module 1: Lab Safety & Equipment</option>
+      <option value="2">Module 2: Sample Prep & Molecular Biology</option>
+      <option value="3">Module 3: Career & Workflow</option>
+    </select>
+    <label>Content Title / Topic</label>
+    <input id="admContentTitle" placeholder="e.g. Lecture 2: PCR Practical Demonstration">
+    <label>Video Link (YouTube / Drive URL)</label>
+    <input id="admVideoLink" placeholder="https://youtube.com/...">
+    <button class="btn primary" style="width:100%;margin-top:5px" onclick="addNewContent()">Publish Content to Course</button>
+    <p id="admMsg" style="font-weight:700;color:var(--teal);margin-top:8px;font-size:13px"></p>
+  </div>
+</div>
+
+</div></div>
+
+<script>
+let isPaid = false;
+
+function openAccount(){document.getElementById('accountModal').classList.add('open')}
+function openEnroll(){document.getElementById('enrollModal').classList.add('open')}
+function openAdminModal(){document.getElementById('adminModal').classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+
+function tab(btn,id){
+  document.querySelectorAll('#accountModal .tab').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#accountModal .panel').forEach(x=>x.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function adminTab(btn,id){
+  document.querySelectorAll('#adminModal .tab').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#adminModal .panel').forEach(x=>x.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function studentRegister(){
+  let name = document.getElementById('regName').value.trim();
+  if(!name){alert('Please enter your name');return;}
+  document.getElementById('dashNameStudent').textContent = name;
+  alert('Account created successfully!');
+  document.querySelectorAll('#accountModal .tab')[2].click();
+}
+
+function studentLogin(){
+  let email = document.getElementById('loginEmail').value.trim();
+  if(!email){alert('Please enter your email');return;}
+  document.getElementById('dashNameStudent').textContent = email.split('@')[0];
+  alert('Logged in successfully!');
+  document.querySelectorAll('#accountModal .tab')[2].click();
+}
+
+function submitEnroll(){
+  let n=document.getElementById('enName').value.trim();
+  let e=document.getElementById('enEmail').value.trim();
+  let r=document.getElementById('paymentRef').value.trim();
+  if(!n||!e||!r){alert('Please complete your name, email and payment reference.');return;}
+  document.getElementById('enMsg').textContent='Enrollment submitted successfully! Dr. Nada will verify your payment (01092196398) and unlock your access soon.';
+}
+
+function approveStudent(btn){
+  btn.textContent = 'Approved ✓';
+  btn.style.background = '#6bb83f';
+  isPaid = true;
+  updateCourseAccess();
+  alert('Student approved! Course videos and materials are now unlocked for them.');
+}
+
+function checkUnlockStatus(){
+  if(isPaid){
+    alert('Payment verified! All course videos are unlocked.');
+  } else {
+    alert('Payment is still pending admin verification. Please submit your payment reference or contact Dr. Nada.');
+  }
+}
+
+function updateCourseAccess(){
+  if(isPaid){
+    document.getElementById('dashStatus').textContent = 'Verified & Unlocked ✓';
+    document.getElementById('dashStatus').style.color = '#2f7d37';
+
+    document.getElementById('mod1-content').innerHTML = `
+      <div class="lesson"><span>🎥 Video 1: Lab Safety & PPE</span><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="pill" style="background:#2f7d37;color:white">WATCH VIDEO</a></div>
+      <div class="lesson"><span>📄 Module 1 materials (PDF)</span><a href="#" onclick="alert('Downloading Module 1 PDF...');return false" class="pill" style="background:#2f7d37;color:white">DOWNLOAD</a></div>
+    `;
+    document.getElementById('mod2-content').innerHTML = `
+      <div class="lesson"><span>🎥 Video 2: Sample Preparation & PCR</span><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="pill" style="background:#2f7d37;color:white">WATCH VIDEO</a></div>
+      <div class="lesson"><span>📄 Module 2 materials (PDF)</span><a href="#" onclick="alert('Downloading Module 2 PDF...');return false" class="pill" style="background:#2f7d37;color:white">DOWNLOAD</a></div>
+    `;
+    document.getElementById('mod3-content').innerHTML = `
+      <div class="lesson"><span>🎥 Video 3: Career Pathways & CV</span><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="pill" style="background:#2f7d37;color:white">WATCH VIDEO</a></div>
+      <div class="lesson"><span>📄 Module 3 materials (PDF)</span><a href="#" onclick="alert('Downloading Module 3 PDF...');return false" class="pill" style="background:#2f7d37;color:white">DOWNLOAD</a></div>
+    `;
+  }
+}
+
+function accessMaterial(title){
+  if(!isPaid){
+    alert('🔒 Access Denied: You must enroll and complete payment (01092196398) to access course videos and materials.');
+    openEnroll();
+  } else {
+    alert('Downloading ' + title + '...');
+  }
+}
+
+function addNewContent(){
+  let mod = document.getElementById('admModuleSelect').value;
+  let title = document.getElementById('admContentTitle').value.trim();
+  let link = document.getElementById('admVideoLink').value.trim();
+  if(!title){alert('Please enter a title');return;}
+  
+  let targetId = 'mod' + mod + '-content';
+  let container = document.getElementById(targetId);
+  if(isPaid || container.innerHTML.includes('LOCKED')){
+    if(container.innerHTML.includes('LOCKED')) container.innerHTML = '';
+  }
+  
+  container.innerHTML += `
+    <div class="lesson"><span>🎥 ${title}</span><a href="${link || '#'}" target="_blank" class="pill" style="background:var(--teal);color:white">WATCH / ACCESS</a></div>
+  `;
+  document.getElementById('admMsg').textContent = 'Content added successfully to Module ' + mod + '!';
+  document.getElementById('admContentTitle').value = '';
+  document.getElementById('admVideoLink').value = '';
+}
+</script>
+</body></html>
